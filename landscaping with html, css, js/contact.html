@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="styles.css">
+
+ <!-- Header -->
+ <header>
+    <div class="logo">A ➡️ Z Landscaping</div>
+    <nav>
+      <ul>
+        <!-- Link to the homepage -->
+        <li><a href="#services">Home</a></li>
+        
+        <li><a href="services.html">Services</a></li>
+
+        <!-- Link to the About Us section on the homepage -->
+        <li><a href="about-us.html">About Us</a></li>
+
+        <!-- Link to the Gallery section on the homepage -->
+        <li><a href="gallery.html">Gallery</a></li>
+
+        <!-- Link to the Contact section on the homepage -->
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333; /* Default text color */
+      background-color: #f5f5f5; /* Background color */
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Container styles */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Heading styles */
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Contact Form styles */
+    .contact-form {
+      display: flex;
+      justify-content: center;
+    }
+
+    form {
+      max-width: 400px;
+      width: 100%;
+      padding: 20px;
+      border: 1px solid #ddd; /* Border around contact form */
+      border-radius: 10px;
+      background-color: #fff;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      resize: none;
+    }
+
+    button[type="submit"] {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #3c8f50; /* Green tone for submit button */
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Contact Information styles */
+    .contact-info {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 5px;
+    }
+    
+    /* Additional style for the confirmation message */
+    #confirmationMessage {
+      font-size: 24px;}
+  </style>
+</head>
+
+
+<body>
+    <div class="container">
+      <h1>Contact Us</h1>
+      <div id="formContainer">
+        <div class="contact-form">
+            <form action="mailto:admasugemechu@gmail.com" method="GET">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+              
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+              
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+              
+                    <button type="submit">Submit</button>
+        </div>
+  </div>
+        </div>
+      </div>
+  
+      <div id="confirmationMessage" style="display: none; text-align: center; margin-top: 20px;"></div>
+    </div>
+  
+    <script>
+      document.getElementById("contactForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission
+  
+        var name = document.getElementById("name").value;
+        showConfirmationMessage(name);
+      });
+  
+      function showConfirmationMessage(name) {
+        var confirmationMessage = document.getElementById("confirmationMessage");
+        confirmationMessage.textContent = `Thank You for contacting us ${name}! We will reach you shortly 😁`;
+        confirmationMessage.style.display = "block";
+  
+        // Hide the message and show the form after 5 seconds
+        setTimeout(function () {
+          confirmationMessage.style.display = "none";
+          document.getElementById("formContainer").style.display = "block";
+          document.getElementById("contactForm").reset();
+        }, 5000);
+  
+        // Hide the form while showing the message
+        document.getElementById("formContainer").style.display = "none";
+      }
+    </script>
+  </body>
+  
+
+</html>
